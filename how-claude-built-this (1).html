@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How Claude built this</title>
+<style>
+body{font:16px/1.6 -apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#fafaf8;color:#222;margin:0}
+main{max-width:760px;margin:0 auto;padding:32px 20px 60px}
+h1{font-size:28px;margin:0 0 6px} h2{font-size:19px;margin:32px 0 8px}
+a{color:#0f8b8d} .p{background:#fff;border:1px solid #e3e3df;border-radius:8px;padding:10px 14px;margin:8px 0}
+.p b{display:block;font-size:12px;color:#777;font-weight:600;margin-bottom:2px}
+</style></head><body><main>
+<p><a href="index.html">&larr; Back to the network</a></p>
+<h1>How Claude built this</h1>
+<p>This page was made for Assignment 3 (vibe coding). I used Claude (Claude Code) to build an interactive network of funders that co-fund programs with the Doris Duke Foundation, and I guided it with my own prompts.</p>
+
+<h2>Tools used</h2>
+<p>Claude (Claude Code) wrote the page and the dataset. D3.js (v7) draws the force-directed graph. GitHub Pages hosts it. Headless Chrome was used by Claude to test the buttons.</p>
+
+<h2>Key prompts (in order)</h2>
+<div class="p"><b>1. Starting point</b>Can you see this: https://ddf-constellation.vercel.app/</div>
+<div class="p"><b>2. Target design</b>I shared a screenshot and said: "This is the page I am trying to build."</div>
+<div class="p"><b>3. Data problem</b>"How will I get this data?" &rarr; "I don't have it." Claude could not access the original site's data, so it rebuilt the data from public sources (foundation announcements, IRS 990-PF filings, annual reports).</div>
+<div class="p"><b>4. Requirements</b>I shared the assignment requirements so the page met them: interactive, published on GitHub Pages, with an AI statement.</div>
+<div class="p"><b>5. Publishing</b>I created a GitHub repository and asked how to connect it, then uploaded the finished page and turned on GitHub Pages.</div>
+<div class="p"><b>6. Usability check</b>I opened the live page and noticed the legend was hard to find at the bottom, and asked for it to be easy to see.</div>
+
+<h2>How accuracy was checked</h2>
+<p>Each funder and program comes from a public source. Endowments were found for 26 of 97 funders; the rest are drawn faint and labeled "endowment not found" rather than guessed. Program amounts that could not be confirmed show as dotted lines. The data is also in a spreadsheet in the repository so it can be checked.</p>
+
+<h2>How usability was checked</h2>
+<p>Claude tested the main interactions in a browser: clicking a funder, opening a program from the dropdown, the year slider, Play, Reset, zoom and area filters, with no errors. I then opened the live page myself and looked for anything confusing. A legend explains line thickness, circle size and colors.</p>
+
+<h2>Limits</h2>
+<p>This is a rebuild from public information, not DDF's official data, and it may contain errors or be out of date. Research as of Nov 24, 2026.</p>
+</main></body></html>
